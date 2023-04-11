@@ -1,4 +1,6 @@
 ---
+import "@/styles/global.css"
+
 import Segmented from "@/components/Segmented.astro"
 import Header from "@/components/header.astro"
 export interface Props {
@@ -25,7 +27,3 @@ const { title, prevPath } = Astro.props
     </section>
   </body>
 </html>
-
-<style>
-  @import "../styles/global.css";
-</style>

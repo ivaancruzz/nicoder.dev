@@ -1,4 +1,7 @@
 ---
+import World from "@/icons/world.svg"
+import Moon from "@/icons/moon-stars.svg"
+import { Image } from "@astrojs/image/components"
 export interface Props {
   prevPath?: string
 }
@@ -16,8 +19,8 @@ const { prevPath } = Astro.props
     )
   }
   <div class="flex gap-4 absolute actions top-0 right-0">
-    <i class="fi fi-rr-world"></i>
-    <i class="fi fi-rr-moon-stars"></i>
+    <Image src={World} alt="" height={20} />
+    <Image src={Moon} alt="" height={20} />
   </div>
 </header>
 
