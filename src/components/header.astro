@@ -1,0 +1,31 @@
+---
+export interface Props {
+  prevPath?: string
+}
+
+const { prevPath } = Astro.props
+---
+
+<header class="header flex justify-center items-center relative">
+  <h1 class="text-primary font-bold">Nicoder {"</>"}</h1>
+  {
+    prevPath && (
+      <a href={prevPath} class="absolute top-0 left-0">
+        <i class="fi fi-rr-arrow-circle-left" />
+      </a>
+    )
+  }
+  <div class="flex gap-4 absolute actions top-0 right-0">
+    <i class="fi fi-rr-world"></i>
+    <i class="fi fi-rr-moon-stars"></i>
+  </div>
+</header>
+
+<style>
+  .header {
+    height: 130px;
+  }
+  i {
+    font-size: 22px;
+  }
+</style>

@@ -1,0 +1,31 @@
+---
+import Segmented from "@/components/Segmented.astro"
+import Header from "@/components/header.astro"
+export interface Props {
+  title?: string
+  prevPath?: string
+}
+
+const { title, prevPath } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title || "Nicoder"}</title>
+  </head>
+  <body class="p-3">
+    <Header prevPath={prevPath} />
+    <Segmented />
+    <section>
+      <slot />
+    </section>
+  </body>
+</html>
+
+<style>
+  @import "../styles/global.css";
+</style>

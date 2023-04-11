@@ -1,0 +1,43 @@
+---
+import type { Post } from "@/types/post"
+import type { MarkdownInstance } from "astro"
+import { formatDate } from "@/utils/format_date"
+
+export interface Props {
+  post: MarkdownInstance<Record<string, any>>
+}
+
+const { post } = Astro.props
+const { title, description, banner, pubDate, tags, alt } = post.frontmatter
+---
+
+<a href={post.url}>
+  <article class="post">
+    <img class="rounded-lg" src={banner} alt="" />
+
+    <div class="flex flex-col gap-3">
+      <h4 class="font-semibold w-full text-primary">
+        {title}
+      </h4>
+      <p class="line-clamp-3">
+        {description}
+      </p>
+      <div class="flex justify-between">
+        {tags.map((tag: string) => <a href={tag}>{tag}</a>)}
+        <small class="text-muted">{formatDate(pubDate)}</small>
+      </div>
+    </div>
+  </article>
+</a>
+
+<style>
+  .post {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden;
+  }
+</style>

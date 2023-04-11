@@ -1,0 +1,26 @@
+---
+---
+
+<div class="segmented lightSmoke">
+  <a href="/" class="active">Posts</a>
+  <a href="/about/" class="active">Sobre mi</a>
+</div>
+<style>
+  .segmented {
+    border-radius: 50px;
+    width: auto;
+    height: auto;
+  }
+
+  span {
+    width: 0;
+    max-width: 100px;
+    transition: all ease 1s;
+  }
+
+  span.active {
+    border-bottom: 1px solid #000;
+    width: 100%;
+    transition: all ease 1s;
+  }
+</style>
