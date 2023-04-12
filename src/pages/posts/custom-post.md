@@ -3,7 +3,7 @@ layout: "../../layouts/MarkdownPostLayout.astro"
 title: "My First Blog Post"
 pubDate: "2023-4-11"
 description: "This is the first post of my new Astro blog."
-banner: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBufIjchEXe3OgB9FRMmIW9RhpP6QPGtLLSQ&usqp=CAU"
+banner: "https://geekflare.com/wp-content/uploads/2020/06/python-hosting.jpg"
 alt: "The Astro logo with the word One."
 tags: ["Python"]
 ---

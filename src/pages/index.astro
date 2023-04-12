@@ -6,8 +6,14 @@ const allPosts = await Astro.glob("../pages/posts/*.md")
 ---
 
 <Layout title="Blog">
-  <section class="flex flex-col gap-3">
-    <h2 class="font-bold">Últimos Posts</h2>
+  <section class="flex flex-col gap-3 items-center m-auto">
+    <h2 class="font-bold text-left w-full">Últimos Posts</h2>
     {allPosts.map((post) => <Post post={post} />)}
   </section>
 </Layout>
+
+<style>
+  section {
+    max-width: 650px;
+  }
+</style>

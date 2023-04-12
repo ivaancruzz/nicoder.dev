@@ -2,18 +2,26 @@
 import { Image } from "@astrojs/image/components"
 import type { MarkdownInstance } from "astro"
 import { formatDate } from "@/utils/format_date"
+import { getImage } from "@astrojs/image"
 
 export interface Props {
   post: MarkdownInstance<Record<string, any>>
 }
-
+let loading = true
 const { post } = Astro.props
 const { title, description, banner, pubDate, tags, alt } = post.frontmatter
 ---
 
 <a href={post.url}>
   <article class="post">
-    <Image class="rounded-lg" src={banner} alt="" />
+    <Image
+      class="rounded-lg"
+      src={banner}
+      alt="My hero image"
+      width={650}
+      format="jpeg"
+      aspectRatio={10 / 3}
+    />
 
     <div class="flex flex-col gap-3">
       <h4 class="font-semibold w-full text-primary">
@@ -39,5 +47,6 @@ const { title, description, banner, pubDate, tags, alt } = post.frontmatter
     gap: 20px;
     padding: 20px;
     overflow: hidden;
+    max-width: 650px;
   }
 </style>
